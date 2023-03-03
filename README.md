@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# A hypertextual approach to "A Pattern Language" (Christopher Alexander)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I think _A Pattern Language_ is an overwhelming book for most people that try to read it. The fact that we're approaching the language in a linear way, due to the limitations of the book format does not help. Yes, some people may spend the time to slowly uncover the language by reading in all the directions suggested by the links on each pattern, but most will probably take an isolated read, more prone to set themselves in an easier task, finding inconsistencies in a specific passage, or specific idea, away from building upon (or criciticising) the work as a whole.
 
-## Available Scripts
+So in this experiment I tried to encourage a networked reading of the work, one where you can see connected patterns from the very beginning. I hope that this helps with contextualising the parts of the whole language. But that's yet to be seen.
 
-In the project directory, you can run:
+## Creating a mini-language for a project
 
-### `npm start`
+Another difficult flow that I'd like to encourage is the selection of a set of patterns into a mini-language that's picked to be useful in a specific project. Therefore this computer program will help you to pick your set of patterns and go through a subset of the pattern language, your mini-language for that project.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This introduces a powerful idea: A pattern language can also act as a method of coordination between people for co-creation, without being too detailed so as to kill individual contribution and initiative but coherent so that each people's contribution helps a common whole.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+By creating a mini-language with peers you'll be able if you're in the same page as them, and can then proceed in a more loose manner.
 
-### `npm test`
+## Your own pattern language
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The logic conclusion of this line of thought is that you're not to only pick patterns from this _A Pattern Language_ work. You want to create _your_ own pattern language, whether you are a person or a group of people.
 
-### `npm run build`
+That's out of the scope of this experiment, but I think that's the ultimate goal, and ideally, you'd need hypertextual tooling that also allows you to write and edit.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Greatly inspired by
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Thanks to Max Krieger and Mikael Brockman for works that I've built upon, and I'm sure they've also built upon the work of others, just for the idea of presenting A Pattern Language in a different form than the original book.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- https://www.figma.com/file/1XukL5HVeCO1ZtXyWKOC85/APL-Cards?node-id=0%3A1&t=F8EQMO4SW8SevX6X-0
+- https://github.com/maxkrieger/pattern-language-cards
+- https://mbrock.github.io/apl/#214
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+And thank you, Christopher Alexander, for your attempts at finding our way towards a beautiful world.
