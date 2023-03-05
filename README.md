@@ -1,4 +1,4 @@
-# A hypertextual approach to "A Pattern Language" (Christopher Alexander)
+# A hypertextual approach to "A Pattern Language" (CES)
 
 I think _A Pattern Language_ is an overwhelming book for most people that try to read it. The fact that we're approaching the language in a linear way, due to the limitations of the book format does not help. Yes, some people may spend the time to slowly uncover the language by reading in all the directions suggested by the links on each pattern, but most will probably take an isolated read, more prone to set themselves in an easier task, finding inconsistencies in a specific passage, or specific idea, away from building upon (or criciticising) the work as a whole.
 
