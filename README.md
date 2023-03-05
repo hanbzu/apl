@@ -22,7 +22,6 @@ That's out of the scope of this experiment, but I think that's the ultimate goal
 
 Thanks to Max Krieger and Mikael Brockman for works that I've built upon, and I'm sure they've also built upon the work of others, just for the idea of presenting A Pattern Language in a different form than the original book.
 
-- https://www.figma.com/file/1XukL5HVeCO1ZtXyWKOC85/APL-Cards?node-id=0%3A1&t=F8EQMO4SW8SevX6X-0
 - https://github.com/maxkrieger/pattern-language-cards
 - https://mbrock.github.io/apl/#214
 
