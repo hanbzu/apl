@@ -1,4 +1,4 @@
-import APL from "./apl.js";
+import PATTERNS from "./PATTERNS.js";
 import React from "react";
 import { atom, useAtom, getDefaultStore } from "jotai";
 import _ from "lodash";
@@ -83,7 +83,7 @@ function App() {
       <div className="thread-container" onScroll={scrollHandler("all")}>
         <Thread
           id="all"
-          edl={APL.list}
+          edl={PATTERNS.list}
           action={[
             "Add",
             (number, id) => {
@@ -103,8 +103,6 @@ function App() {
   );
 }
 
-// console.log(JSON.stringify(APL.all));
-
 function Thread({ id, edl, action, bottomMessage }) {
   const [f, setFocused] = useFocused();
   const [buttonLabel, buttonOnClick] = action;
@@ -114,12 +112,14 @@ function Thread({ id, edl, action, bottomMessage }) {
       <Aside
         title="helps to complete..."
         baseline={f.baseline}
-        edl={f && id === f.group ? APL.dictionary[f.number]?.biggerLinks : []}
+        edl={
+          f && id === f.group ? PATTERNS.dictionary[f.number]?.biggerLinks : []
+        }
       />
 
       <section className="list">
         {edl.map((d) => {
-          const p = APL.dictionary[d] || {};
+          const p = PATTERNS.dictionary[d] || {};
           return (
             <div
               key={d}
@@ -142,7 +142,12 @@ function Thread({ id, edl, action, bottomMessage }) {
                 </div>
                 <div
                   className="image-box"
-                  style={{ backgroundImage: `url("${p.frontImage}")` }}
+                  style={{
+                    backgroundImage: `url("${
+                      process.env.PUBLIC_URL +
+                      `/images/${String(p.number).padStart(3, "0")}photo.jpg`
+                    }")`,
+                  }}
                 />
                 <button
                   className="action"
@@ -156,7 +161,13 @@ function Thread({ id, edl, action, bottomMessage }) {
               </div>
               <div className="right">
                 <p>{p.backText}</p>
-                <img src={p.backImage} alt="diagram" />
+                <img
+                  src={
+                    process.env.PUBLIC_URL +
+                    `/images/${String(p.number).padStart(3, "0")}diagram.gif`
+                  }
+                  alt="diagram"
+                />
               </div>
             </div>
           );
@@ -167,7 +178,9 @@ function Thread({ id, edl, action, bottomMessage }) {
       <Aside
         title="complete with..."
         baseline={f.baseline}
-        edl={f && id === f.group ? APL.dictionary[f.number]?.smallerLinks : []}
+        edl={
+          f && id === f.group ? PATTERNS.dictionary[f.number]?.smallerLinks : []
+        }
       />
     </>
   );
@@ -183,11 +196,17 @@ function Aside({ baseline, edl = [], title }) {
     >
       {edl.length > 0 && <h1>{title}</h1>}
       {edl.map((d) => {
-        const { number, asterisks, name, frontImage } = APL.dictionary[d] || {};
+        const { number, asterisks, name, frontImage } =
+          PATTERNS.dictionary[d] || {};
         return (
           <div
             key={d}
-            style={{ backgroundImage: `url("${frontImage}")` }}
+            style={{
+              backgroundImage: `url("${
+                process.env.PUBLIC_URL +
+                `/images/${String(number).padStart(3, "0")}photo.jpg`
+              }")`,
+            }}
             onClick={() =>
               document
                 .getElementById(`all-${number}`)
