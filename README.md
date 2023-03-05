@@ -6,7 +6,7 @@ So in this experiment I tried to encourage a networked reading of the work, one 
 
 ## Creating a mini-language for a project
 
-Another difficult flow that I'd like to encourage is the selection of a set of patterns into a mini-language that's picked to be useful in a specific project. Therefore this computer program will help you to pick your set of patterns and go through a subset of the pattern language, your mini-language for that project.
+Another difficult flow that I'd like to make easier is the selection of a set of patterns into a mini-language that's picked to be useful in a specific project. Therefore this computer program will help you to pick your set of patterns and go through a subset of the pattern language, your mini-language for that project.
 
 This introduces a powerful idea: A pattern language can also act as a method of coordination between people for co-creation, without being too detailed so as to kill individual contribution and initiative but coherent so that each people's contribution helps a common whole.
 
@@ -26,4 +26,4 @@ Thanks to Max Krieger and Mikael Brockman for works that I've built upon, and I'
 - https://github.com/maxkrieger/pattern-language-cards
 - https://mbrock.github.io/apl/#214
 
-And thank you, Christopher Alexander, for your attempts at finding our way towards a beautiful world.
+And thanks to authors Christopher Alexander, Murray Silverstein, Sara Ishikawa, Max Jacobson, Ingrid Fiksdahl-King, and Shlomo Angel from the Center for Environmental Structure (CES) for your attempts at finding our way towards a beautiful world.

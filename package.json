@@ -2,7 +2,7 @@
   "name": "apl-cards",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hanbzu.github.io/apl-cards/",
+  "homepage": "https://hanbzu.github.io/apl/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",

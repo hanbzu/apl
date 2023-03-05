@@ -24,22 +24,44 @@ code {
 }
 
 .thread-container {
+  position: relative;
   background: oldlace;
   color: #1d2d35;
   overflow-y: scroll;
+  display: grid;
+  grid-template-columns: 1fr 60% 1fr;
+  gap: 12px;
+  padding: 20px 10px;
+}
+
+.aside {
   display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 700;
+  font-size: 15px;
 }
 
-.larger {
-  width: 20%;
+.aside > h1 {
+  margin: 0;
+  font-size: 16px;
+  font-size: 18px;
+  font-family: "EB Garamond", serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
-.smaller {
-  width: 20%;
-}
-
-.list {
-  width: 60%;
+.aside > div {
+  color: white;
+  border-radius: 8px;
+  height: 54px;
+  background-size: cover;
+  background-position: center;
+  background-color: #ceb9ed;
+  background-blend-mode: multiply;
+  overflow: hidden;
+  padding: 4px 6px;
+  cursor: pointer;
 }
 
 .item {
@@ -53,6 +75,27 @@ code {
   background: white;
   overflow: hidden;
   cursor: pointer;
+}
+
+.item button {
+  display: block;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+  border: none;
+  background: magenta;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 8px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.item:hover button {
+  opacity: 1;
 }
 
 .item.focused {
@@ -99,6 +142,7 @@ code {
   font-family: "Archivo Narrow", sans-serif;
   letter-spacing: 1.5px;
   color: gray;
+  text-transform: uppercase;
 }
 
 .item > .left > .image-box {
@@ -107,14 +151,13 @@ code {
   display: grid;
   background-size: cover;
   background-position: center;
-  backdrop-filter: hue-rotate(127deg);
   min-height: 200px;
 }
 
 .item > .right {
   padding: 4px 4px 3px 8px;
   line-height: 20px;
-  font-size: 18px;
+  font-size: 17px;
   font-family: "EB Garamond", serif;
 }
 
@@ -130,4 +173,10 @@ p {
   margin: 5px auto 0 auto;
   max-width: 100%;
   max-height: 300px;
+}
+
+.bottom-message {
+  font-size: 17px;
+  font-family: "EB Garamond", serif;
+  font-style: italic;
 }
