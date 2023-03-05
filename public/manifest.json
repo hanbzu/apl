@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "A Pattern Language",
+  "name": "Create your own mini-languages from the patterns in A Pattern Language",
   "icons": [
     {
       "src": "favicon.ico",
