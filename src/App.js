@@ -67,8 +67,6 @@ function App() {
   const [pinned, add, remove] = usePinned();
   console.log(`pinned`, pinned);
 
-  function onFocus(number) {}
-
   return (
     <>
       <div className="thread-container" onScroll={scrollHandler("pinned")}>
@@ -76,7 +74,6 @@ function App() {
           id="pinned"
           edl={pinned}
           action={["Remove", remove]}
-          onFocus={onFocus}
           bottomMessage="Add patterns to create your mini-language for a project..."
         />
       </div>
@@ -137,7 +134,7 @@ function Thread({ id, edl, action, bottomMessage }) {
                     {p.number} {[...Array(p.asterisks)].map(() => "✱").join("")}
                   </h1>
                   <h2>{p.name}</h2>
-                  <p>{p.frontText}</p>
+                  <p>{p.problem}</p>
                   <div className="category">{p.category}</div>
                 </div>
                 <div
@@ -149,18 +146,31 @@ function Thread({ id, edl, action, bottomMessage }) {
                     }")`,
                   }}
                 />
-                <button
-                  className="action"
-                  onClick={(e) => {
-                    buttonOnClick(p.number, id);
-                    e.stopPropagation();
-                  }}
-                >
-                  {buttonLabel}
-                </button>
+                <div className="action">
+                  <button
+                    onClick={(e) => {
+                      buttonOnClick(p.number, id);
+                      e.stopPropagation();
+                    }}
+                  >
+                    {buttonLabel}
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      window.open(
+                        process.env.PUBLIC_URL +
+                          `/book.pdf#page=${p.bookPage + 44}`,
+                        "_blank"
+                      );
+                      e.stopPropagation();
+                    }}
+                  >
+                    p {p.bookPage}
+                  </button>
+                </div>
               </div>
               <div className="right">
-                <p>{p.backText}</p>
+                <p>{p.therefore}</p>
                 <img
                   src={
                     process.env.PUBLIC_URL +
@@ -196,8 +206,7 @@ function Aside({ baseline, edl = [], title }) {
     >
       {edl.length > 0 && <h1>{title}</h1>}
       {edl.map((d) => {
-        const { number, asterisks, name, frontImage } =
-          PATTERNS.dictionary[d] || {};
+        const { number, asterisks, name } = PATTERNS.dictionary[d] || {};
         return (
           <div
             key={d}
@@ -221,24 +230,4 @@ function Aside({ baseline, edl = [], title }) {
       })}
     </section>
   );
-}
-
-function capitaliseWord(word, lc, isFirst) {
-  if (
-    !isFirst &&
-    ["of", "the", "at", "in", "per", "and"].includes(word.toLowerCase())
-  )
-    return lc ? word.toLowerCase() : word;
-  const [first, ...rest] = word;
-  return (
-    first.toUpperCase() + (lc ? rest.join("").toLowerCase() : rest.join(""))
-  );
-}
-function capitalise(str, lc = true, all = true) {
-  return all
-    ? str
-        .split(/(\s|-|')/)
-        .map((s, i) => capitaliseWord(s, lc, i === 0))
-        .join("")
-    : capitaliseWord(str, lc);
 }

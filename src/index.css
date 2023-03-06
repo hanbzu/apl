@@ -86,7 +86,7 @@ code {
   height: 54px;
   background-size: cover;
   background-position: center;
-  background-color: #ceb9ed;
+  background-color: #ff9353;
   background-blend-mode: multiply;
   overflow: hidden;
   padding: 4px 6px;
@@ -106,29 +106,40 @@ code {
   cursor: pointer;
 }
 
-.item button {
-  display: block;
+.item .action {
+  display: flex;
+  gap: 1px;
   position: absolute;
   left: 10px;
   bottom: 10px;
   opacity: 0;
   transition: opacity 0.1s ease-in;
-  border: none;
-  background: magenta;
-  color: white;
+  border: 1px solid black;
   border-radius: 4px;
+  background: black;
+  overflow: hidden;
+}
+
+.item .action > button {
+  border: none;
+  background: #ff9353;
+  color: white;
   font-size: 16px;
   padding: 8px 14px;
   font-weight: 700;
   cursor: pointer;
 }
 
-.item:hover button {
+.item .action > button:hover {
+  filter: brightness(1.15);
+}
+
+.item:hover .action {
   opacity: 1;
 }
 
 .item.focused {
-  outline: 8px solid #ceb9ed;
+  outline: 8px solid #ff9353;
 }
 
 .left {
