@@ -2,6 +2,7 @@ import PATTERNS from "./PATTERNS.js";
 import React from "react";
 import { atom, useAtom, getDefaultStore } from "jotai";
 import _ from "lodash";
+import { motion, AnimatePresence } from "framer-motion";
 
 const focusedAtom = atom(null);
 const defaultStore = getDefaultStore();
@@ -108,6 +109,7 @@ function Thread({ id, edl, action, bottomMessage }) {
     <>
       <Aside
         title="helps to complete..."
+        threadId={id}
         baseline={f.baseline}
         edl={
           f && id === f.group ? PATTERNS.dictionary[f.number]?.biggerLinks : []
@@ -187,6 +189,7 @@ function Thread({ id, edl, action, bottomMessage }) {
 
       <Aside
         title="complete with..."
+        threadId={id}
         baseline={f.baseline}
         edl={
           f && id === f.group ? PATTERNS.dictionary[f.number]?.smallerLinks : []
@@ -198,17 +201,23 @@ function Thread({ id, edl, action, bottomMessage }) {
 
 export default App;
 
-function Aside({ baseline, edl = [], title }) {
+function Aside({ baseline, edl = [], title, threadId }) {
+  const [f, setFocused] = useFocused();
+
   return (
     <section
       className="aside"
-      style={{ paddingTop: baseline ? +baseline - 54 : 0 }}
+      style={{ transform: `translateY(${baseline ? +baseline - 54 : 0}px)` }}
     >
-      {edl.length > 0 && <h1>{title}</h1>}
+      {edl.length > 0 && <h1 key="header">{title}</h1>}
       {edl.map((d) => {
         const { number, asterisks, name } = PATTERNS.dictionary[d] || {};
         return (
-          <div
+          <motion.div
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             key={d}
             style={{
               backgroundImage: `url("${
@@ -216,16 +225,16 @@ function Aside({ baseline, edl = [], title }) {
                 `/images/${String(number).padStart(3, "0")}photo.jpg`
               }")`,
             }}
-            onClick={() =>
-              document
-                .getElementById(`all-${number}`)
-                .scrollIntoView({ behavior: "smooth", block: "center" })
-            }
+            onClick={() => {
+              const el = document.getElementById(`all-${number}`);
+              setFocused(`${threadId}-${d}-${el.offsetTop}`);
+              el.scrollIntoView({ behavior: "smooth", block: "center" });
+            }}
           >
             {number} {[...Array(asterisks)].map(() => "✱").join("")}
             <br />
             {name}
-          </div>
+          </motion.div>
         );
       })}
     </section>
